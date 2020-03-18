@@ -35,7 +35,7 @@ def main(db_file, output_dir):
                 field_name_row.append(col_name)
             writer.writerow(field_name_row)  # write the field labels in first row
             # now get the data
-            cur.execute("SELECT * FROM " + tab + ";")
+            cur.execute("SELECT * FROM " + f"`{tab}`" + ";")
             rows = cur.fetchall()
             for row in rows:
                writer.writerow(row)  # write data row
